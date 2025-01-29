@@ -1,0 +1,6 @@
+[submodule "setar/themes/ananke"]
+	path = setar/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "setar/themes/hugo-news"]
+	path = setar/themes/hugo-news
+	url = https://github.com/professionalaf/hugo-news
