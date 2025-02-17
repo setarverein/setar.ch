@@ -30,6 +30,23 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 
+      <!-- For Sender email marketing -->
+      <script>
+         (function (s, e, n, d, er) {
+            s['Sender'] = er;
+            s[er] = s[er] || function () {
+               (s[er].q = s[er].q || []).push(arguments)
+            }, s[er].l = 1 * new Date();
+            var a = e.createElement(n),
+               m = e.getElementsByTagName(n)[0];
+            a.async = 1;
+            a.src = d;
+            m.parentNode.insertBefore(a, m)
+         })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+         sender('319eab0dc70472')
+      </script>
+      <!-- END Sender email marketing -->
+
    </head>
    <body>
       <!--header section start -->
@@ -391,13 +408,8 @@
                      </div>
                   </div> -->
                   <div class="contact_info_section">
-                     <!-- <h2>Contact Information</h2> -->
-                     <h3>If you have any questions or need further information, please feel free to contact us:</h3>
-                     <ul>
-                        <li><strong>Address:</strong> CH-8000 Zurich</li>
-                        <li><strong>Phone:</strong> +41 76 376 4002</li>
-                        <li><strong>Email:</strong> info@setar.ch</li>
-                     </ul>
+                     <!-- Sender newsletter form -->
+                     <div style="text-align: left" class="sender-form-field" data-sender-form-id="m79i2572exdmna6vx4h"></div>
                   </div>
                </div>
                <div class="col-md-6 padding_0">
