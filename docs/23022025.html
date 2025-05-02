@@ -2,139 +2,261 @@
 <html lang="en">
 
 <head>
-  <!-- basic -->
+  <!-- Basic Meta Tags -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- mobile metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  <!-- site metas -->
-  <title>Setar Association</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- bootstrap css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <!-- style css -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- Responsive-->
-  <link rel="stylesheet" href="css/responsive.css">
-  <!-- fevicon -->
-  <link rel="icon" href="images/fevicon.png" type="image/gif" />
-  <!-- Scrollbar Custom CSS -->
-  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-  <!-- Tweaks for older IEs-->
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <!-- owl stylesheets -->
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-    media="screen">
 
+  <!-- SEO Meta Tags -->
+  <title>Median Ensemble | Setar Association</title>
+  <meta name="keywords" content="Setar, Iranian Music, Persian Music, Classical Music, Median Ensemble, Zürich">
+  <meta name="description" content="Classical Persian Music by Median Ensemble performed on Sunday, February 23, 2025 at Klus Park, Zürich.">
+  <meta name="author" content="Setar Association">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Main CSS (Modern Approach) -->
+  <link rel="stylesheet" type="text/css" href="css/modern.css">
 </head>
 
 <body>
-  <!--header section start -->
-  <div class="header_section">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="concerts.html">Concerts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="assets/Mitgliedsantrag_Verein_Setar_DE.pdf">Members</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact-us">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  <!--header section end -->
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to Content</a>
 
-  <div>
-    <img src="concert_data/23022025_main.png" alt="Large Image" style="width:100%; height:auto;">
-    <div class="info_section2" style="text-align:center; margin-top:20px;">
-      <div class="learnmore_b2" style="display:inline-block; padding:15px 30px; font-size:38px; background-color:#007bff; color:white; border-radius:5px;">
-        <a href="https://www.tickettailor.com/events/setarkulturverein/1560189" style="color:white; text-decoration:none;">Tickets</a>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Setar Association Logo">
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about-us">About Us</a></li>
+        <li><a href="concerts.html" class="active">Concerts</a></li>
+        <li><a href="assets/Mitgliedsantrag_Verein_Setar_DE.pdf">Membership</a></li>
+        <li><a href="index.html#contact-us">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Concert Detail Header -->
+  <section class="page-header concert-header" id="main-content">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <h1>Median Ensemble</h1>
+      <p>Classical Persian Music</p>
+    </div>
+  </section>
+
+  <!-- Main Concert Image -->
+  <section class="full-width-image-section">
+    <div class="container">
+      <div class="concert-main-image fade-in">
+        <img src="concert_data/23022025_main.png" alt="Median Ensemble Concert Poster" class="full-width-image">
       </div>
     </div>
-  </div>
+  </section>
 
-
-  <!-- footer section start -->
-  <div class="footer_section layout_padding">
+  <!-- Concert Detail Section -->
+  <section class="concert-detail-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-sm-6">
-          <h3 class="useful_text">Persischer Kulturverein Setar</h3>
-          <p class="footer_text">Promoting classical Iranian music and culture through concerts, courses, and community
-            events in Zurich.</p>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <h1 class="useful_text">Contact Us</h1>
-          <div class="location_text">
-            <ul>
-              <li>
-                <a href="#">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address : CH-8000
-                    Zurich</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call : +41 76 376
-                    4002</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email :
-                    info@setar.ch</span>
-                </a>
-              </li>
-            </ul>
+        <!-- <div class="col-50 fade-in">
+          <div class="concert-detail-image">
+            <img src="concert_data/23022025.png" alt="Median Ensemble" class="rounded-image">
+            <div class="concert-date-large">
+              <span class="day">23</span>
+              <span class="month">FEB</span>
+              <span class="year">2025</span>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-50 fade-in">
+          <div class="concert-detail-content">
+            <h2>Classical Persian Music Night</h2>
+
+            <div class="concert-detail-info">
+              <div class="detail-item">
+                <i class="far fa-calendar-alt"></i>
+                <div class="detail-text">
+                  <strong>Date:</strong>
+                  <span>Sunday, February 23, 2025</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <i class="far fa-clock"></i>
+                <div class="detail-text">
+                  <strong>Time:</strong>
+                  <span>Doors open at 19:00 | Concert starts at 20:00</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="detail-text">
+                  <strong>Location:</strong>
+                  <span>Klus Park, Zürich</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="detail-text">
+                  <strong>Tickets:</strong>
+                  <span>Regular: CHF 35.— | Reduced (Students & AHV): CHF 25.—</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-description">
+              <h3>Event Description</h3>
+              <p>The Median Ensemble invites you to an unforgettable evening of classical Persian music. Experience the rich musical heritage of Iran through the masterful performance of traditional instruments and melodies.</p>
+
+              <p>The concert features authentic instruments including setar, tar, santur, and tombak, bringing to life ancient musical traditions in a contemporary context.</p>
+
+              <p>This special performance celebrates the classical Persian musical tradition known as the Radif, a collection of melodic figures preserved through centuries of oral tradition.</p>
+            </div>
+
+            <a href="https://www.tickettailor.com/events/setarkulturverein/1560189" class="btn btn-secondary btn-large">Buy Tickets</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- footer section end -->
-  <!-- copyright section start -->
-  <div class="copyright_section">
+  </section>
+
+  <!-- Program Section
+  <!-- <section class="program-section">
     <div class="container">
-      <p class="copyright_text">2025 All Rights Reserved by Setar Kulturverein</p>
+      <h2 class="section-title">Concert Program</h2>
+
+      <div class="program-box fade-in">
+        <div class="program-part">
+          <h3>Part I</h3>
+          <ul class="program-list">
+            <li>
+              <span class="program-item">Chahargah</span>
+              <span class="program-description">Traditional piece in Chahargah mode</span>
+            </li>
+            <li>
+              <span class="program-item">Zabolestan</span>
+              <span class="program-description">Contemporary composition inspired by Sistan region</span>
+            </li>
+            <li>
+              <span class="program-item">Morgh-e Sahar</span>
+              <span class="program-description">Classical song composed by Morteza Neydavoud</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="intermission">
+          <span>Intermission (20 minutes)</span>
+        </div>
+
+        <div class="program-part">
+          <h3>Part II</h3>
+          <ul class="program-list">
+            <li>
+              <span class="program-item">Mahour</span>
+              <span class="program-description">Traditional piece in Mahour mode</span>
+            </li>
+            <li>
+              <span class="program-item">Isfahan</span>
+              <span class="program-description">Inspired by the musical tradition of Isfahan</span>
+            </li>
+            <li>
+              <span class="program-item">Improvisation</span>
+              <span class="program-description">Free form exploration of Persian modes</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- copyright section end -->
-  <!-- Javascript files-->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/jquery-3.0.0.min.js"></script>
-  <script src="js/plugin.js"></script>
-  <!-- sidebar -->
-  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="js/custom.js"></script>
+  </section> --> -->
+
+  <!-- Contact for More Info -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div class="contact-info-box fade-in">
+        <h3>Need More Information?</h3>
+        <p>Contact us directly for group bookings or special arrangements</p>
+        <div class="contact-methods">
+          <a href="mailto:info@setar.ch" class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <span>info@setar.ch</span>
+          </a>
+          <a href="tel:+41763764002" class="contact-method">
+            <i class="fas fa-phone"></i>
+            <span>+41 76 376 4002</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-50">
+          <img src="images/logo.png" alt="Setar Association Logo" class="footer-logo">
+          <p>Promoting classical Iranian music and culture through concerts, courses, and community events in Zurich.</p>
+
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-50">
+          <h3 class="footer-heading">Contact Information</h3>
+          <div class="footer-contact">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>CH-8000 Zurich, Switzerland</span>
+          </div>
+          <div class="footer-contact">
+            <i class="fas fa-phone"></i>
+            <span>+41 76 376 4002</span>
+          </div>
+          <div class="footer-contact">
+            <i class="fas fa-envelope"></i>
+            <span>info@setar.ch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025 Setar Cultural Association. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modern JS -->
+  <script src="js/modern.js"></script>
 </body>
 
 </html>

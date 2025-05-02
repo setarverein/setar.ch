@@ -1,0 +1,1276 @@
+/* Modern CSS for Setar Association Website
+   Created: May 2025
+*/
+
+/* CSS Variables for consistent theming */
+:root {
+  /* Color Palette */
+  --primary-color: #1a5276; /* Deep teal/blue for sophistication */
+  --secondary-color: #c0392b; /* Warm red accent for Iranian cultural aesthetics */
+  --accent-color: #f39c12; /* Golden accent */
+
+  /* Neutral Tones */
+  --neutral-dark: #333333;
+  --neutral-medium: #707070;
+  --neutral-light: #f5f5f5;
+
+  /* Typography */
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Raleway', sans-serif;
+
+  /* Spacing System */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Container Widths */
+  --container-max: 1200px;
+  --container-narrow: 900px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+  --transition-slow: 0.8s ease;
+
+  /* Shadow */
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: var(--neutral-dark);
+  background-color: var(--neutral-light);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover, a:focus {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* Grid System (Flexbox-based) */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.col {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+/* For different column sizes */
+.col-50 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1rem;
+}
+
+.col-33 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0 1rem;
+}
+
+.col-25 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-50, .col-33, .col-25 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Header & Navigation */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: var(--shadow-light);
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: var(--space-md);
+}
+
+.nav-menu a {
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width var(--transition-medium);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: var(--shadow-medium);
+    transition: height var(--transition-medium);
+  }
+
+  .nav-menu.active {
+    height: auto;
+    padding: var(--space-md) 0;
+  }
+
+  .nav-menu li {
+    margin: var(--space-xs) 0;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: all var(--transition-fast);
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  display: flex;
+  align-items: center;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-lg);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 0;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-sm);
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+  color: white;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  transition: background-color var(--transition-fast);
+}
+
+.hero-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.hero-controls {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 var(--space-xs);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.hero-dot.active {
+  background-color: white;
+}
+
+/* About Section */
+.about-section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.about-card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-medium);
+  margin-bottom: var(--space-md);
+  transition: transform var(--transition-medium);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: var(--space-sm);
+}
+
+.about-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  background-image: url('../images/persian-pattern.png');
+  z-index: -1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--space-lg) 0 var(--space-md);
+}
+
+.footer-logo {
+  margin-bottom: var(--space-md);
+  display: block;
+  max-width: 150px;
+}
+
+.footer-heading {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-xs);
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-contact {
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact i {
+  margin-right: var(--space-xs);
+  color: var(--secondary-color);
+}
+
+.social-links {
+  display: flex;
+  margin-top: var(--space-md);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin-right: var(--space-xs);
+  transition: background-color var(--transition-fast);
+}
+
+.social-icon:hover {
+  background-color: var(--secondary-color);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: darken(var(--secondary-color), 10%);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Card Component */
+.card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--space-md);
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-1 {
+  margin-bottom: var(--space-xs) !important;
+}
+
+.mb-2 {
+  margin-bottom: var(--space-sm) !important;
+}
+
+.mb-3 {
+  margin-bottom: var(--space-md) !important;
+}
+
+.mb-4 {
+  margin-bottom: var(--space-lg) !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-1 {
+  margin-top: var(--space-xs) !important;
+}
+
+.mt-2 {
+  margin-top: var(--space-sm) !important;
+}
+
+.mt-3 {
+  margin-top: var(--space-md) !important;
+}
+
+.mt-4 {
+  margin-top: var(--space-lg) !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-medium), transform var(--transition-medium);
+}
+
+.fade-in.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility */
+*:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  background: var(--primary-color);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  z-index: 1001;
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Page Header */
+.page-header {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image: url('../images/setar.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--space-lg);
+}
+
+.page-header .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: var(--space-xs);
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sections */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.concerts-section {
+  padding: var(--space-lg) 0;
+}
+
+.past-concerts {
+  background-color: var(--neutral-light);
+}
+
+/* Concert Cards */
+.concert-card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  margin-bottom: var(--space-md);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.concert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.concert-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.concert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.concert-card:hover .concert-image img {
+  transform: scale(1.05);
+}
+
+.concert-date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.concert-date .date {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.concert-date .month {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.concert-content {
+  padding: var(--space-md);
+}
+
+.concert-subtitle {
+  color: var(--neutral-medium);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+}
+
+.concert-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md) 0;
+}
+
+.concert-details li {
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: flex-start;
+}
+
+.concert-details i {
+  color: var(--secondary-color);
+  margin-right: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Small Concert Cards (for past concerts) */
+.concert-card.small {
+  height: 100%;
+}
+
+.concert-card.small .concert-image {
+  height: 180px;
+}
+
+.concert-card.small .concert-date {
+  width: 50px;
+  height: 50px;
+  top: 15px;
+  right: 15px;
+}
+
+.concert-card.small .concert-date .date {
+  font-size: 1.25rem;
+}
+
+.concert-card.small .concert-content {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.concert-card.small h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+.concert-year {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--space-xs);
+}
+
+.concert-location {
+  color: var(--neutral-medium);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  padding: var(--space-lg) 0;
+  background-color: white;
+}
+
+.newsletter-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-medium);
+}
+
+.newsletter-box h2, .newsletter-box h3 {
+  color: white;
+  margin-bottom: var(--space-sm);
+}
+
+.newsletter-box p {
+  margin-bottom: var(--space-md);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input[type="email"] {
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  .newsletter-form button {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Active nav link */
+.nav-menu a.active {
+  color: var(--secondary-color);
+}
+
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+/* Concert Detail Page Styles */
+.concert-header {
+  background-image: url('../images/setar_02_large.jpg');
+}
+
+.full-width-image-section {
+  padding: var(--space-md) 0;
+  background-color: white;
+}
+
+.concert-main-image {
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-medium);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.full-width-image {
+  width: 100%;
+  display: block;
+}
+
+.concert-detail-section {
+  padding: var(--space-lg) 0;
+  background-color: var(--neutral-light);
+}
+
+.concert-detail-image {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  margin-bottom: var(--space-md);
+}
+
+.rounded-image {
+  width: 100%;
+  display: block;
+}
+
+.concert-date-large {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.concert-date-large .day {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.concert-date-large .month {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.concert-date-large .year {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.concert-detail-content {
+  padding: var(--space-md);
+  background-color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+}
+
+.concert-detail-info {
+  margin-bottom: var(--space-md);
+}
+
+.detail-item {
+  display: flex;
+  margin-bottom: var(--space-sm);
+  align-items: flex-start;
+}
+
+.detail-item i {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+  margin-right: var(--space-sm);
+  width: 20px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.detail-text strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--primary-color);
+}
+
+.concert-description {
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Artists Section */
+.artists-section {
+  padding: var(--space-lg) 0;
+  background-color: white;
+}
+
+.artist-card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  height: 100%;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.artist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.artist-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.artist-card:hover .artist-image img {
+  transform: scale(1.05);
+}
+
+.artist-content {
+  padding: var(--space-md);
+}
+
+.artist-instrument {
+  color: var(--secondary-color);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+/* Program Section */
+.program-section {
+  padding: var(--space-lg) 0;
+  background-color: var(--neutral-light);
+}
+
+.program-box {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-medium);
+}
+
+.program-part {
+  margin-bottom: var(--space-md);
+}
+
+.program-part h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  padding-bottom: var(--space-xs);
+}
+
+.program-part h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+.program-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.program-list li:last-child {
+  border-bottom: none;
+}
+
+.program-item {
+  font-weight: 600;
+  flex: 0 0 30%;
+}
+
+.program-description {
+  color: var(--neutral-medium);
+  flex: 0 0 65%;
+  text-align: right;
+}
+
+.intermission {
+  padding: var(--space-md) 0;
+  margin: var(--space-md) 0;
+  text-align: center;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  color: var(--neutral-medium);
+  font-style: italic;
+}
+
+/* Contact Info Box */
+.contact-info-section {
+  padding: var(--space-lg) 0;
+  background-color: white;
+}
+
+.contact-info-box {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.contact-info-box h3 {
+  color: white;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-info-box p {
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  transition: opacity var(--transition-fast);
+}
+
+.contact-method:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.contact-method i {
+  margin-right: var(--space-xs);
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .program-list li {
+    flex-direction: column;
+  }
+
+  .program-description {
+    text-align: left;
+    margin-top: var(--space-xs);
+  }
+
+  .concert-date-large {
+    width: 70px;
+    height: 70px;
+  }
+
+  .concert-date-large .day {
+    font-size: 1.75rem;
+  }
+}
